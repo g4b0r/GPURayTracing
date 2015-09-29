@@ -22,9 +22,6 @@
 		26A4AA131BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
 		26A4AA141BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
 		26A4AA151BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
-		26A4AA171BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
-		26A4AA181BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
-		26A4AA191BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +59,6 @@
 		26A4AA021BBA302700EBECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RayTracer.fsh; sourceTree = "<group>"; };
 		26A4AA121BBA326800EBECA6 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
-		26A4AA161BBA34AC00EBECA6 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				26A4AA121BBA326800EBECA6 /* tile.png */,
-				26A4AA161BBA34AC00EBECA6 /* earth.png */,
 				26A4A9DC1BBA302700EBECA6 /* AppDelegate.swift */,
 				26A4A9DE1BBA302700EBECA6 /* GameScene.sks */,
 				26A4A9E01BBA302700EBECA6 /* GameScene.swift */,
@@ -252,7 +247,6 @@
 				26A4A9DF1BBA302700EBECA6 /* GameScene.sks in Resources */,
 				26A4A9EB1BBA302700EBECA6 /* LaunchScreen.storyboard in Resources */,
 				26A4AA0F1BBA321100EBECA6 /* RayTracer.fsh in Resources */,
-				26A4AA171BBA34AC00EBECA6 /* earth.png in Resources */,
 				26A4A9E81BBA302700EBECA6 /* Assets.xcassets in Resources */,
 				26A4A9E61BBA302700EBECA6 /* Main.storyboard in Resources */,
 				26A4AA131BBA326800EBECA6 /* tile.png in Resources */,
@@ -265,7 +259,6 @@
 			files = (
 				26A4AA101BBA321100EBECA6 /* RayTracer.fsh in Resources */,
 				26A4AA141BBA326800EBECA6 /* tile.png in Resources */,
-				26A4AA181BBA34AC00EBECA6 /* earth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +268,6 @@
 			files = (
 				26A4AA111BBA321100EBECA6 /* RayTracer.fsh in Resources */,
 				26A4AA151BBA326800EBECA6 /* tile.png in Resources */,
-				26A4AA191BBA34AC00EBECA6 /* earth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +509,7 @@
 				26A4AA071BBA302700EBECA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A4AA081BBA302700EBECA6 /* Build configuration list for PBXNativeTarget "GPURayTracingTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +518,7 @@
 				26A4AA0A1BBA302700EBECA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A4AA0B1BBA302700EBECA6 /* Build configuration list for PBXNativeTarget "GPURayTracingUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +527,7 @@
 				26A4AA0D1BBA302700EBECA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
