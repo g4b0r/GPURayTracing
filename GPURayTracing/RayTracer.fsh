@@ -28,12 +28,13 @@ float intersectSphere(vec3 camera, vec3 ray, vec3 sphereOrigin, float sphereRadi
 void main() {
     vec3 lightPosition = vec3(0.0, 0.0, -1.0);
     vec3 spherePosition = vec3(0.0, 0.0, 2.0);
-    float sphereRadius = 0.9;
-    vec3 cameraPosition = vec3(0.0, 0.0, 0.0);
+    float sphereRadius = 1.2;
+    vec3 cameraPosition = vec3(0.0, 0.0, -1.0);
     
     vec2 uv = v_tex_coord * 2.0 - 1.0;  // Incoming pixel to shade
     uv.y = -uv.y;
-    vec3 ray = vec3(uv.x, uv.y, 1.0);   // Generate a ray
+    vec3 pixelPosition = vec3(uv.x, uv.y, 0.0);
+    vec3 ray = pixelPosition - cameraPosition;  // Generate a ray
     ray = normalize(ray);
     
     float distance = intersectSphere(cameraPosition, ray, spherePosition, sphereRadius);
