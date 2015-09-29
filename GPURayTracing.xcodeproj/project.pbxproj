@@ -16,6 +16,15 @@
 		26A4A9EB1BBA302700EBECA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A4A9E91BBA302700EBECA6 /* LaunchScreen.storyboard */; };
 		26A4A9F61BBA302700EBECA6 /* GPURayTracingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A4A9F51BBA302700EBECA6 /* GPURayTracingTests.swift */; };
 		26A4AA011BBA302700EBECA6 /* GPURayTracingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A4AA001BBA302700EBECA6 /* GPURayTracingUITests.swift */; };
+		26A4AA0F1BBA321100EBECA6 /* RayTracer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */; settings = {ASSET_TAGS = (); }; };
+		26A4AA101BBA321100EBECA6 /* RayTracer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */; settings = {ASSET_TAGS = (); }; };
+		26A4AA111BBA321100EBECA6 /* RayTracer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */; settings = {ASSET_TAGS = (); }; };
+		26A4AA131BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
+		26A4AA141BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
+		26A4AA151BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
+		26A4AA171BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
+		26A4AA181BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
+		26A4AA191BBA34AC00EBECA6 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA161BBA34AC00EBECA6 /* earth.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,9 @@
 		26A4A9FC1BBA302700EBECA6 /* GPURayTracingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPURayTracingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A4AA001BBA302700EBECA6 /* GPURayTracingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPURayTracingUITests.swift; sourceTree = "<group>"; };
 		26A4AA021BBA302700EBECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RayTracer.fsh; sourceTree = "<group>"; };
+		26A4AA121BBA326800EBECA6 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		26A4AA161BBA34AC00EBECA6 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,8 @@
 		26A4A9DB1BBA302700EBECA6 /* GPURayTracing */ = {
 			isa = PBXGroup;
 			children = (
+				26A4AA121BBA326800EBECA6 /* tile.png */,
+				26A4AA161BBA34AC00EBECA6 /* earth.png */,
 				26A4A9DC1BBA302700EBECA6 /* AppDelegate.swift */,
 				26A4A9DE1BBA302700EBECA6 /* GameScene.sks */,
 				26A4A9E01BBA302700EBECA6 /* GameScene.swift */,
@@ -109,6 +123,7 @@
 				26A4A9E71BBA302700EBECA6 /* Assets.xcassets */,
 				26A4A9E91BBA302700EBECA6 /* LaunchScreen.storyboard */,
 				26A4A9EC1BBA302700EBECA6 /* Info.plist */,
+				26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */,
 			);
 			path = GPURayTracing;
 			sourceTree = "<group>";
@@ -236,8 +251,11 @@
 			files = (
 				26A4A9DF1BBA302700EBECA6 /* GameScene.sks in Resources */,
 				26A4A9EB1BBA302700EBECA6 /* LaunchScreen.storyboard in Resources */,
+				26A4AA0F1BBA321100EBECA6 /* RayTracer.fsh in Resources */,
+				26A4AA171BBA34AC00EBECA6 /* earth.png in Resources */,
 				26A4A9E81BBA302700EBECA6 /* Assets.xcassets in Resources */,
 				26A4A9E61BBA302700EBECA6 /* Main.storyboard in Resources */,
+				26A4AA131BBA326800EBECA6 /* tile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +263,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A4AA101BBA321100EBECA6 /* RayTracer.fsh in Resources */,
+				26A4AA141BBA326800EBECA6 /* tile.png in Resources */,
+				26A4AA181BBA34AC00EBECA6 /* earth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A4AA111BBA321100EBECA6 /* RayTracer.fsh in Resources */,
+				26A4AA151BBA326800EBECA6 /* tile.png in Resources */,
+				26A4AA191BBA34AC00EBECA6 /* earth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
