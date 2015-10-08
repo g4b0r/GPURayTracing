@@ -39,28 +39,27 @@ float intersectSphere(vec3 camera, vec3 ray, vec3 sphereOrigin, float sphereRadi
     float dt = dot(ray, sphereOrigin - camera);
     if (dt < 0.0) {
         // The sphere is behind the camera
-        return -1;
+        return -1.0;
     }
     vec3 tmp = camera - sphereOrigin;
     tmp.x = dot(tmp, tmp);
     tmp.x = tmp.x - dt * dt;
     if (tmp.x >= radiusSquared) {
         // The ray missed the sphere
-        return -1;
+        return -1.0;
     }
     float distanceFromCamera = dt - sqrt(radiusSquared - tmp.x);
     return distanceFromCamera;
 }
 
 void main() {
-    
-    vec3 lightPosition = vec3(0.0, 0.0, -5.0);
+    vec3 lightPosition = vec3(0.0, 0.0, -25.0);
     vec3 spherePosition = vec3(0.0, 0.0, 0.0);
     float sphereRadius = 1.4;
-    vec3 cameraPosition = vec3(0.0, 0.0, -6.0);
+    vec3 cameraPosition = vec3(0.0, 0.0, -10.0);
     
     vec2 uv = v_tex_coord * 2.0 - 1.0;  // Incoming pixel to shade
-    vec3 pixelPosition = vec3(uv.x / 2.2, uv.y / 2.2, -5.0);
+    vec3 pixelPosition = vec3(uv.x / 3.5, uv.y / 3.5, -9.0);
     
     vec3 ray = pixelPosition - cameraPosition;  // Generate a ray
     ray = normalize(ray);
