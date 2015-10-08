@@ -2,6 +2,33 @@
 // Function prototypes
 //
 float intersectSphere(vec3 camera, vec3 ray, vec3 sphereOrigin, float sphereRadius);
+mat3 xrot(float angle);
+mat3 yrot(float angle);
+mat3 zrot(float angle);
+
+mat3 xrot(float angle) {
+    mat3 m;
+    m[0] = vec3(1.0, 0.0, 0.0);
+    m[1] = vec3(0.0, cos(angle), -sin(angle));
+    m[2] = vec3(0.0, sin(angle), cos(angle));
+    return m;
+}
+
+mat3 yrot(float angle) {
+    mat3 m;
+    m[0] = vec3(cos(angle), 0.0, -sin(angle));
+    m[1] = vec3(0.0, 1.0, 0.0);
+    m[2] = vec3(sin(angle), 0.0, cos(angle));
+    return m;
+}
+
+mat3 zrot(float angle) {
+    mat3 m;
+    m[0] = vec3(cos(angle), -sin(angle), 0.0);
+    m[1] = vec3(sin(angle), cos(angle), 0.0);
+    m[2] = vec3(0.0, 0.0, 1.0);
+    return m;
+}
 
 //
 // Intersect sphere and return the distance to the intersection point.
@@ -26,16 +53,22 @@ float intersectSphere(vec3 camera, vec3 ray, vec3 sphereOrigin, float sphereRadi
 }
 
 void main() {
-    vec3 lightPosition = vec3(0.0, 0.0, -1.0);
-    vec3 spherePosition = vec3(0.0, 0.0, 2.0);
-    float sphereRadius = 1.2;
-    vec3 cameraPosition = vec3(0.0, 0.0, -1.0);
+    
+    vec3 lightPosition = vec3(0.0, 0.0, -5.0);
+    vec3 spherePosition = vec3(0.0, 0.0, 0.0);
+    float sphereRadius = 1.4;
+    vec3 cameraPosition = vec3(0.0, 0.0, -6.0);
     
     vec2 uv = v_tex_coord * 2.0 - 1.0;  // Incoming pixel to shade
-    uv.y = -uv.y;
-    vec3 pixelPosition = vec3(uv.x, uv.y, 0.0);
+    vec3 pixelPosition = vec3(uv.x / 2.2, uv.y / 2.2, -5.0);
+    
     vec3 ray = pixelPosition - cameraPosition;  // Generate a ray
     ray = normalize(ray);
+    
+    ray = ray * xrot(yOffset) * yrot(xOffset);
+    cameraPosition = cameraPosition * xrot(yOffset) * yrot(xOffset);
+    
+    lightPosition = lightPosition * yrot(-u_time / 5.0);
     
     float distance = intersectSphere(cameraPosition, ray, spherePosition, sphereRadius);
     
@@ -44,16 +77,23 @@ void main() {
         vec3 pointOfIntersection = cameraPosition + ray * distance;
         vec3 normal = normalize(pointOfIntersection - spherePosition); // Surface normal
         
-        float u = atan(normal.z, normal.x) / 3.1415926 * 2.0 + xOffset;
-        float v = asin(normal.y) / 3.1415926 * 2.0 + yOffset;
+        float u = 0.5 + atan(normal.z, normal.x) / (3.1415926 * 2.0);
+        float v = 0.5 - asin(normal.y) / -3.1415926;
         
         float brightness = dot(normalize(lightPosition - spherePosition), normal);
-        brightness = brightness * brightness;
+        if (brightness < 0.0) {
+            brightness = 0.0;
+        }
         
-        u = mod(u * 8.0, 8.0);
-        v = mod(v * 8.0, 8.0);
+        vec4 earthColor = texture2D(u_texture, vec2(fract(u), fract(v)));
+        vec4 earthLights = texture2D(texture_lights, vec2(fract(u), fract(v)));
+        vec4 cloudColor = texture2D(texture_clouds, vec2(fract(u + (u_time / 1000.0)), fract(v))) * brightness;
+        vec4 cloudAlpha = texture2D(texture_clouds_alpha, vec2(fract(u + (u_time / 1000.0)), fract(v)));
         
-        vec4 color = texture2D(u_texture, vec2(fract(u), 1.0-fract(v))) * brightness;
+        earthColor = earthColor * brightness + earthLights * ((1.0 - brightness) * 0.4);
+        
+        vec4 color = earthColor * cloudAlpha.r + cloudColor * (1.0 - cloudAlpha.r);
+        
         gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
     }
     else {

@@ -13,10 +13,12 @@ class GameScene: SKScene {
     var canvas: SKSpriteNode?
     var xOffset: Float = 0.0
     var yOffset: Float = 0.0
+    var force: Float = 0.0
+    var velocity: CGPoint = CGPointMake(0.0, 0.0)
     
     override func didMoveToView(view: SKView) {
         size = CGSizeMake(100, 100)
-        canvas = SKSpriteNode(imageNamed: "tile.png")
+        canvas = SKSpriteNode(imageNamed: "earth.jpg")
         
         if canvas != nil {
             let canvas = self.canvas!
@@ -27,6 +29,11 @@ class GameScene: SKScene {
             canvas.shader?.uniforms = [
                 SKUniform(name: "xOffset", float: xOffset),
                 SKUniform(name: "yOffset", float: yOffset),
+                SKUniform(name: "force", float: force),
+                SKUniform(name: "texture_clouds", texture: SKTexture(imageNamed: "earthcloudmap.jpg")),
+                SKUniform(name: "texture_clouds_alpha", texture: SKTexture(imageNamed: "cloudalpha.jpg")),
+                SKUniform(name: "texture_lights", texture: SKTexture(imageNamed: "earthlights.jpg")),
+                
             ];
             addChild(canvas)
         }
@@ -36,22 +43,25 @@ class GameScene: SKScene {
             view.addGestureRecognizer(panGestureRecognizer!)
         }
     }
-        
+    
     func handlePanGesture(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(view)
-        
-        let x: Float = Float(translation.x / -50.0 * (1.0 / 8.0))
-        let y: Float = Float(translation.y / -50.0 * (1.0 / 8.0))
-        
+        velocity = recognizer.velocityInView(view)
+    }
+    
+    override func update(currentTime: CFTimeInterval) {
+        xOffset = xOffset - Float(velocity.x / 30000.0)
+        yOffset = yOffset + Float(velocity.y / 30000.0)
+        velocity.x *= 0.95
+        velocity.y *= 0.95
+
         canvas?.shader?.uniforms = [
-            SKUniform(name: "xOffset", float: xOffset + x),
-            SKUniform(name: "yOffset", float: yOffset + y),
+            SKUniform(name: "xOffset", float: xOffset),
+            SKUniform(name: "yOffset", float: yOffset),
+            SKUniform(name: "force", float: force),
+            SKUniform(name: "texture_clouds", texture: SKTexture(imageNamed: "earthcloudmap.jpg")),
+            SKUniform(name: "texture_clouds_alpha", texture: SKTexture(imageNamed: "cloudalpha.jpg")),
+            SKUniform(name: "texture_lights", texture: SKTexture(imageNamed: "earthlights.jpg")),            
         ];
-        
-        if recognizer.state == UIGestureRecognizerState.Ended {
-            xOffset = xOffset + x
-            yOffset = yOffset + y
-        }
     }
     
 }

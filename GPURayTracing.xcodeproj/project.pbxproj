@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264C5E8E1BC6154D00FFE293 /* earthcloudmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 264C5E8D1BC6154D00FFE293 /* earthcloudmap.jpg */; settings = {ASSET_TAGS = (); }; };
+		264C5E901BC6181300FFE293 /* moonmap4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 264C5E8F1BC6181300FFE293 /* moonmap4k.jpg */; settings = {ASSET_TAGS = (); }; };
+		264C5E921BC6196100FFE293 /* cloudalpha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 264C5E911BC6196100FFE293 /* cloudalpha.jpg */; settings = {ASSET_TAGS = (); }; };
+		264C5E961BC61D4F00FFE293 /* earthlights.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 264C5E951BC61D4F00FFE293 /* earthlights.jpg */; settings = {ASSET_TAGS = (); }; };
 		26A4A9DD1BBA302700EBECA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A4A9DC1BBA302700EBECA6 /* AppDelegate.swift */; };
 		26A4A9DF1BBA302700EBECA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 26A4A9DE1BBA302700EBECA6 /* GameScene.sks */; };
 		26A4A9E11BBA302700EBECA6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A4A9E01BBA302700EBECA6 /* GameScene.swift */; };
@@ -22,6 +26,8 @@
 		26A4AA131BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
 		26A4AA141BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
 		26A4AA151BBA326800EBECA6 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A4AA121BBA326800EBECA6 /* tile.png */; settings = {ASSET_TAGS = (); }; };
+		26F250041BC5CE71008F0181 /* mars2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26F250031BC5CE71008F0181 /* mars2.jpg */; settings = {ASSET_TAGS = (); }; };
+		26F250061BC5D284008F0181 /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26F250051BC5D284008F0181 /* earth.jpg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		264C5E8D1BC6154D00FFE293 /* earthcloudmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthcloudmap.jpg; sourceTree = "<group>"; };
+		264C5E8F1BC6181300FFE293 /* moonmap4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moonmap4k.jpg; sourceTree = "<group>"; };
+		264C5E911BC6196100FFE293 /* cloudalpha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloudalpha.jpg; sourceTree = "<group>"; };
+		264C5E951BC61D4F00FFE293 /* earthlights.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthlights.jpg; sourceTree = "<group>"; };
 		26A4A9D91BBA302700EBECA6 /* GPURayTracing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPURayTracing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A4A9DC1BBA302700EBECA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26A4A9DE1BBA302700EBECA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -59,6 +69,8 @@
 		26A4AA021BBA302700EBECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A4AA0E1BBA321100EBECA6 /* RayTracer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RayTracer.fsh; sourceTree = "<group>"; };
 		26A4AA121BBA326800EBECA6 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		26F250031BC5CE71008F0181 /* mars2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mars2.jpg; sourceTree = "<group>"; };
+		26F250051BC5D284008F0181 /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +121,12 @@
 		26A4A9DB1BBA302700EBECA6 /* GPURayTracing */ = {
 			isa = PBXGroup;
 			children = (
+				26F250031BC5CE71008F0181 /* mars2.jpg */,
+				264C5E8F1BC6181300FFE293 /* moonmap4k.jpg */,
+				26F250051BC5D284008F0181 /* earth.jpg */,
+				264C5E911BC6196100FFE293 /* cloudalpha.jpg */,
+				264C5E951BC61D4F00FFE293 /* earthlights.jpg */,
+				264C5E8D1BC6154D00FFE293 /* earthcloudmap.jpg */,
 				26A4AA121BBA326800EBECA6 /* tile.png */,
 				26A4A9DC1BBA302700EBECA6 /* AppDelegate.swift */,
 				26A4A9DE1BBA302700EBECA6 /* GameScene.sks */,
@@ -208,6 +226,7 @@
 				TargetAttributes = {
 					26A4A9D81BBA302700EBECA6 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = LTDZZL7R2Q;
 					};
 					26A4A9F01BBA302700EBECA6 = {
 						CreatedOnToolsVersion = 7.0;
@@ -248,7 +267,13 @@
 				26A4A9EB1BBA302700EBECA6 /* LaunchScreen.storyboard in Resources */,
 				26A4AA0F1BBA321100EBECA6 /* RayTracer.fsh in Resources */,
 				26A4A9E81BBA302700EBECA6 /* Assets.xcassets in Resources */,
+				26F250061BC5D284008F0181 /* earth.jpg in Resources */,
+				264C5E961BC61D4F00FFE293 /* earthlights.jpg in Resources */,
+				264C5E921BC6196100FFE293 /* cloudalpha.jpg in Resources */,
 				26A4A9E61BBA302700EBECA6 /* Main.storyboard in Resources */,
+				264C5E901BC6181300FFE293 /* moonmap4k.jpg in Resources */,
+				264C5E8E1BC6154D00FFE293 /* earthcloudmap.jpg in Resources */,
+				26F250041BC5CE71008F0181 /* mars2.jpg in Resources */,
 				26A4AA131BBA326800EBECA6 /* tile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,10 +447,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GPURayTracing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Appcylon.GPURayTracing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -433,10 +461,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GPURayTracing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Appcylon.GPURayTracing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
