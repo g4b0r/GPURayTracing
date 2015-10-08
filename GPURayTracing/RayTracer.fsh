@@ -97,6 +97,17 @@ void main() {
         gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
     }
     else {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        mat2 rot;
+        float deg = u_time / 100.0;
+        rot[0] = vec2(cos(deg), sin(deg));
+        rot[1] = vec2(-sin(deg), cos(deg));
+        
+        vec2 uv = v_tex_coord.xy;
+        uv = uv - vec2(.5);
+        uv = uv * rot;
+        uv = uv + vec2(.5);
+        
+        vec4 color = texture2D(texture_stars, vec2(fract(uv.x), fract(uv.y))) * 0.4;
+        gl_FragColor = vec4(color.r, color.g, color.b, 1.0);
     }
 }

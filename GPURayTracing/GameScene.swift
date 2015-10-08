@@ -19,6 +19,7 @@ class GameScene: SKScene {
     let earthCloudMap = SKTexture(imageNamed: "earthcloudmap.jpg")
     let earthCloudAlpha = SKTexture(imageNamed: "cloudalpha.jpg")
     let earthLights = SKTexture(imageNamed: "earthlights.jpg")
+    let starfield = SKTexture(imageNamed: "starfield.jpg")
     
     override func didMoveToView(view: SKView) {
         size = CGSizeMake(100, 100)
@@ -37,7 +38,7 @@ class GameScene: SKScene {
                 SKUniform(name: "texture_clouds", texture: earthCloudMap),
                 SKUniform(name: "texture_clouds_alpha", texture: earthCloudAlpha),
                 SKUniform(name: "texture_lights", texture: earthLights),
-                
+                SKUniform(name: "texture_stars", texture: starfield),
             ];
             addChild(canvas)
         }
