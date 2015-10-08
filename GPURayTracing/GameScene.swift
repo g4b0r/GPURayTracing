@@ -15,6 +15,10 @@ class GameScene: SKScene {
     var yOffset: Float = 0.0
     var force: Float = 0.0
     var velocity: CGPoint = CGPointMake(0.0, 0.0)
+
+    let earthCloudMap = SKTexture(imageNamed: "earthcloudmap.jpg")
+    let earthCloudAlpha = SKTexture(imageNamed: "cloudalpha.jpg")
+    let earthLights = SKTexture(imageNamed: "earthlights.jpg")
     
     override func didMoveToView(view: SKView) {
         size = CGSizeMake(100, 100)
@@ -30,9 +34,9 @@ class GameScene: SKScene {
                 SKUniform(name: "xOffset", float: xOffset),
                 SKUniform(name: "yOffset", float: yOffset),
                 SKUniform(name: "force", float: force),
-                SKUniform(name: "texture_clouds", texture: SKTexture(imageNamed: "earthcloudmap.jpg")),
-                SKUniform(name: "texture_clouds_alpha", texture: SKTexture(imageNamed: "cloudalpha.jpg")),
-                SKUniform(name: "texture_lights", texture: SKTexture(imageNamed: "earthlights.jpg")),
+                SKUniform(name: "texture_clouds", texture: earthCloudMap),
+                SKUniform(name: "texture_clouds_alpha", texture: earthCloudAlpha),
+                SKUniform(name: "texture_lights", texture: earthLights),
                 
             ];
             addChild(canvas)
@@ -53,15 +57,13 @@ class GameScene: SKScene {
         yOffset = yOffset + Float(velocity.y / 30000.0)
         velocity.x *= 0.95
         velocity.y *= 0.95
-
-        canvas?.shader?.uniforms = [
-            SKUniform(name: "xOffset", float: xOffset),
-            SKUniform(name: "yOffset", float: yOffset),
-            SKUniform(name: "force", float: force),
-            SKUniform(name: "texture_clouds", texture: SKTexture(imageNamed: "earthcloudmap.jpg")),
-            SKUniform(name: "texture_clouds_alpha", texture: SKTexture(imageNamed: "cloudalpha.jpg")),
-            SKUniform(name: "texture_lights", texture: SKTexture(imageNamed: "earthlights.jpg")),            
-        ];
+        
+        if let shader = canvas?.shader {
+            shader.removeUniformNamed("xOffset")
+            shader.removeUniformNamed("yOffset")
+            shader.addUniform(SKUniform(name: "xOffset", float: xOffset))
+            shader.addUniform(SKUniform(name: "yOffset", float: yOffset))
+        }
     }
     
 }
